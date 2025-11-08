@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ENR-G Automotive Lubricants</title>
+
+  <!-- Tailwind CDN with forms & typography plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+  <!-- Google fonts & material symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- Alpine.js for small interactivity -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <script>
+    // Tailwind config
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#a3ff00', /* neon green */
+            'background-light': '#f7f8fb',
+            'background-dark': '#0b0b0b',
+            accent: '#00d4ff'
+          },
+          fontFamily: {
+            display: ['Montserrat', 'sans-serif']
+          },
+          boxShadow: {
+            'hero-glow': '0 20px 60px rgba(163,255,0,0.08)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    /* small visual tweaks */
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+    /* animated gradient underline for headings */
+    .gradient-underline {
+      background: linear-gradient(90deg, rgba(163,255,0,1), rgba(0,212,255,0.8));
+      background-size: 0% 3px;
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      transition: background-size .5s ease;
+    }
+    .gradient-underline:hover {
+      background-size: 100% 3px;
+    }
+    /* subtle reveal classes for JS */
+    .reveal { opacity: 0; transform: translateY(18px) scale(.995); transition: all .6s cubic-bezier(.2,.9,.2,1); }
+    .reveal.show { opacity: 1; transform: none; }
+    /* decorative skew in product cards */
+    .skew-deco::before {
+      content: "";
+      position: absolute; inset: -2px;
+      transform: skewY(-3deg);
+      z-index: -1;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, rgba(163,255,0,0.06), rgba(0,212,255,0.03));
+    }
+    /* fluid hero mask for readability */
+    .hero-mask { background: linear-gradient(180deg, rgba(10,10,10,0.35), rgba(10,10,10,0.65)); }
+    /* focus ring customization */
+    .focus-ring:focus { outline: 3px solid rgba(163,255,0,0.12); outline-offset: 3px; border-radius: .5rem; }
+  </style>
+</head>
+<body x-data="site()" :class="darkMode ? 'dark' : ''" class="font-display antialiased text-gray-900 dark:text-gray-100 bg-background-light dark:bg-background-dark">
+
+<script>
+  // Alpine global state
+  function site(){
+    return {
+      mobileNavOpen: false,
+      darkMode: true, // default dark; user can toggle
+      toggleDark() { this.darkMode = !this.darkMode; document.documentElement.classList.toggle('dark', this.darkMode) },
+      init() {
+        document.documentElement.classList.toggle('dark', this.darkMode);
+        // simple reveal on load and scroll
+        const io = new IntersectionObserver((entries)=>{
+          entries.forEach(e => {
+            if(e.isIntersecting) e.target.classList.add('show');
+          });
+        }, {threshold: 0.15});
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+      }
+    }
+  }
+</script>
+
+<!-- Page container -->
+<div class="min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header class="w-full z-40 fixed top-0 left-0 right-0 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-4">
+        <div class="flex items-center gap-3">
+          <a href="#" class="inline-flex items-center gap-3">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-gray-800 p-2 shadow">
+              <img alt="ENR-G Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKwJFbj_HBlPhKNnQbGTnIFSKzUG9wwgnZPRQAatdLUiT3ahjWnH-l1x2J6voLy1seHTaPjwPsW8KW8091x3IE3Z97NOK5pK_y_mdfD89-BCPuqdd6D3ODwEd235s9v4s5XH14ScxNkVpliVTAght270qz68n4L1VG68whqiDmq7PDERU6mFCGomVP960gNKcbXdDmpG_2TA8mcFbgS06-XIwS-XdWkqdHw07atA5Kc7mrnOjWgxR4hfGWubEijWMpGGlWJRBFuIY" class="w-full h-full object-contain" />
+            </div>
+            <div class="hidden sm:block">
+              <p class="text-sm font-bold text-gray-900 dark:text-gray-100 leading-none">ENR-G</p>
+              <p class="text-xs text-gray-600 dark:text-gray-400 -mt-0.5">Automotive Lubricants</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+  <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+  <a class="hover:text-primary transition-colors" href="product.html">Products</a>
+  <a class="hover:text-primary transition-colors" href="distributor.html">Distributors</a>
+  <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+</nav>
+
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button @click="toggleDark()" class="focus-ring rounded-md px-3 py-2 text-sm flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm">
+            <span class="material-symbols-outlined text-lg" x-text="darkMode ? 'dark_mode' : 'light_mode'"></span>
+            <span class="hidden sm:inline text-sm font-semibold" x-text="darkMode ? 'Dark' : 'Light'"></span>
+          </button>
+
+          <a href="#contact" class="hidden md:inline-block bg-primary text-black font-bold py-2 px-5 rounded-md hover:opacity-95 transition">LET'S TALK</a>
+
+          <!-- Mobile menu button -->
+          <button class="md:hidden p-2 rounded-md focus-ring" @click="mobileNavOpen = true">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile nav panel -->
+    <div x-show="mobileNavOpen" x-cloak x-transition class="fixed inset-0 z-50">
+      <div class="absolute inset-0 bg-black/50" @click="mobileNavOpen=false"></div>
+      <aside class="absolute right-0 top-0 h-full w-72 bg-white dark:bg-gray-900 p-6 shadow-2xl">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-white dark:bg-gray-800 p-1 rounded">
+              <img alt="logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKwJFbj_HBlPhKNnQbGTnIFSKzUG9wwgnZPRQAatdLUiT3ahjWnH-l1x2J6voLy1seHTaPjwPsW8KW8091x3IE3Z97NOK5pK_y_mdfD89-BCPuqdd6D3ODwEd235s9v4s5XH14ScxNkVpliVTAght270qz68n4L1VG68whqiDmq7PDERU6mFCGomVP960gNKcbXdDmpG_2TA8mcFbgS06-XIwS-XdWkqdHw07atA5Kc7mrnOjWgxR4hfGWubEijWMpGGlWJRBFuIY" class="w-full h-full object-contain" />
+            </div>
+            <div>
+              <p class="text-sm font-bold">ENR-G</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400 -mt-0.5">Automotive Lubricants</p>
+            </div>
+          </div>
+          <button @click="mobileNavOpen=false" class="p-2 rounded-md focus-ring">
+            <span class="material-symbols-outlined text-2xl">close</span>
+          </button>
+        </div>
+
+        <nav class="flex flex-col gap-3">
+          <a @click="mobileNavOpen=false" class="py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#home">Home</a>
+          <a @click="mobileNavOpen=false" class="py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#about">About</a>
+          <a @click="mobileNavOpen=false" class="py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#products">Products</a>
+          <a @click="mobileNavOpen=false" class="py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#partners">Distributors</a>
+          <a @click="mobileNavOpen=false" class="py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#contact">Contact</a>
+        </nav>
+
+        <div class="mt-6">
+          <a href="#contact" @click="mobileNavOpen=false" class="block text-center bg-primary text-black font-bold py-2 rounded">LET'S TALK</a>
+        </div>
+
+        <div class="mt-6 text-xs text-gray-500">
+          © 2025 ENR-G
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="flex-grow">
+    <section class="relative h-screen min-h-[720px] flex items-center">
+      <picture class="absolute inset-0 -z-10">
+        <img src="C:\Users\DELL\Desktop\motor\download.jpg" alt="" class="w-full h-full object-cover brightness-75" />
+        <div class="absolute inset-0 hero-mask"></div>
+      </picture>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto reveal">
+          <p class="inline-block text-primary font-bold tracking-widest text-sm sm:text-base uppercase mb-4">ENR-G AUTOMOTIVE LUBRICANTS</p>
+          <h1 class="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight uppercase drop-shadow-lg">
+            Make Your Bike<br />
+            Truly Yours<br />
+            With Our<br />
+            Engine Oil
+          </h1>
+
+          <p class="mt-6 text-gray-200 max-w-2xl mx-auto leading-relaxed">High-performance lubrication engineered to protect, perform, and keep your ride feeling like new — every mile.</p>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#products" class="inline-flex items-center gap-3 bg-white text-black font-bold px-6 py-3 rounded-lg shadow hero-glow hover:translate-y-[-2px] transition">CHECK OUR PRODUCTS
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+            <a href="#partners" class="inline-flex items-center gap-3 border border-white/30 text-white px-6 py-3 rounded-lg hover:bg-white/10 transition">BECOME A PARTNER</a>
+          </div>
+        </div>
+
+        <!-- floating CTA -->
+        <a class="absolute bottom-10 right-10 w-14 h-14 bg-primary rounded-full flex items-center justify-center text-black shadow-lg hover:scale-110 transition" href="#about" aria-label="scroll to about">
+          <span class="material-symbols-outlined">arrow_downward</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-background-light dark:bg-background-dark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6 reveal">
+            <p class="text-primary font-bold tracking-widest text-sm uppercase">Powerful Engine Oil</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold gradient-underline">How It All Started</h2>
+
+            <h3 class="text-xl font-bold">ENR-G: Powering Performance, Protecting Your Engine</h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">At ENR-G we engineer liquid performance. Born from a passion for automotive excellence and a commitment to cutting-edge science, our mission is simple: provide vehicles with the absolute best lubrication available.</p>
+
+            <h3 class="text-xl font-bold">Our Philosophy: Maximum Energy, Maximum Protection</h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">ENR-G stands for the Energy and superior Reliability we deliver to your engine. Each bottle is formulated to meet and exceed the toughest industry standards.</p>
+
+            <div class="mt-6 flex gap-4">
+              <a href="#products" class="px-5 py-2 rounded-md bg-primary text-black font-bold">Explore Products</a>
+              <a href="#contact" class="px-5 py-2 rounded-md border border-gray-300 dark:border-gray-700 text-sm">Contact Us</a>
+            </div>
+          </div>
+
+          <div class="relative reveal">
+            <div class="rounded-lg overflow-hidden shadow-2xl">
+              <img alt="Founder holding oil bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5O7OJCwO7GJOkfKuTtfDLGMdGZBMSL35YH9S-IgJ7YGBr9f7cIDdUXXFgWbcXg6Hm7jxBOPBnAOlMMm1ObgRAizCxrF6JOfqXy2X1G2SCtLImiDb26_PlXdzbuOf9nKLr3JZRG2sc4nTv7pXtR7TKDZpT15lRNbbYAT_qxOsdyod6IBLtc1fbL2Kwwj6L3T-7RfqXibZIXbj03X8EF_I_8Tgl69UPB1RE4Gu8Ix6bxifp7jXUJxA3Jp-cUNsY47EGh9Fp-VlocwA" class="w-full h-80 object-cover">
+            </div>
+            <div class="absolute -right-6 -top-6 w-56 h-56 rounded-lg transform rotate-3 bg-gradient-to-br from-primary/60 to-accent/30 blur-lg opacity-40"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="py-12 bg-gray-100 dark:bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="reveal p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <h3 class="text-3xl md:text-4xl font-extrabold">2021</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 uppercase tracking-wider">Founded</p>
+          </div>
+          <div class="reveal p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <h3 class="text-3xl md:text-4xl font-extrabold">84</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 uppercase tracking-wider">Products</p>
+          </div>
+          <div class="reveal p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <h3 class="text-3xl md:text-4xl font-extrabold">128</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 uppercase tracking-wider">Clients</p>
+          </div>
+          <div class="reveal p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <h3 class="text-3xl md:text-4xl font-extrabold">6</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 uppercase tracking-wider">Awards</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISTRIBUTOR OPPORTUNITY -->
+    <section id="partners" class="py-20 bg-background-light dark:bg-background-dark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="relative reveal">
+            <div class="rounded-lg overflow-hidden shadow-2xl">
+              <img alt="Business hologram" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwxtPbG8lS12oawdeZXz_ucTQ_YchYRuWXU1jsgiVmyqxs15FUxXd4Tkk4A5ESc-mbmjBv8Je6OSwTWD1BdJKGRrA9OlLE9rQ01VjwZwUHBCF_KpRGYn7Y-myd82kRhzZ1hqd1IqRjqo635dCEixwzpOOU80bn8hA_dI1tLv2Kg4B2HwQDmv4OtsLnO4vXiczBYbmcTpnod4cHUZYb6tSOaQ20GuXKj9nbMXkDu9vczB4tVjvI1U4nDg1U7XXOT6WuuRESzEHtsLA" class="w-full h-80 object-cover">
+            </div>
+            <div class="absolute -left-6 -bottom-6 w-40 h-40 rounded-lg transform -rotate-6 bg-primary/30 blur-lg opacity-50"></div>
+          </div>
+
+          <div class="space-y-6 reveal">
+            <p class="text-primary font-bold tracking-widest text-sm uppercase">Distributorship</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold uppercase">Partner With ENR-G: Distributorship Opportunity</h2>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">Become a distribution partner with ENR-G and join us delivering high-performance lubrication solutions to market. We’re actively seeking motivated and established distributors to expand our reach.</p>
+
+            <div class="flex gap-4">
+              <a href="#contact" class="px-6 py-3 rounded-md bg-primary text-black font-bold">BECOME A PARTNER</a>
+              <a href="#contact" class="px-6 py-3 rounded-md border border-gray-300 dark:border-gray-700">Request Info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="py-20 bg-gray-100 dark:bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center reveal">
+          <p class="text-primary font-bold tracking-widest text-sm uppercase mb-2">Our Products</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold uppercase">Our Latest Works</h2>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">High-spec engine oils for every ride — from small commuter scooters to high-performance sports bikes.</p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <article class="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg overflow-hidden reveal skew-deco">
+            <img alt="4T 10W-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJrxAxAEwc0ya4WDRblVWY1PZ37fe5D-22rL6HK1FG20C41bKoJj_eQLYuu9CbZyZskfq_QXCT2YeIOcXFFgO8zJ3ObMWyUry7uMSc14Ipi2BBXVfSfOcUVCobdy5R4MsgpgSbLETluj0aYWwhaQbEu-yd8lrFplH7IFYG_LwyluHCeuN8RSPK3JIM0FbeGl1jS07WC7bJ0A6HUL9Vjzw3Rei6YXyAd8kSkNQusQj6WqGu8zUUYHAwDSVKZnYK3Mz_YxkChtdzFfM" class="h-56 object-contain mx-auto mb-4">
+            <h3 class="text-2xl font-extrabold">4T 10W-30</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Synthetic engine oil for scooters and bikes — 90cc to 110cc.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-sm text-gray-500">1L / 4L</div>
+              <a href="#contact" class="text-sm font-bold bg-primary text-black px-4 py-2 rounded">Buy Now</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg overflow-hidden reveal skew-deco">
+            <img alt="4T 20W-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkVylTn5FUKicRgNAI2DOPESeE0WF_P-fDFiiKcp35q_XimPuIV-_XVXPf74JsT4UcmhI29zGWqAGSsV7OGcLZZ1eBLU00RSV10bqJ079Gk8g2VDk368UX9fGLQQ3ugcVtiHW6OA3Lg8CC9qnTvcYfAxXs_CgFjz4XC0j_L8OThfZhjYD5LYMrAa-dSCqqbsjN2TpqZCyyVt9URnG0tECGnjhlhBsGIhWvJUyixkCZRFkffaGFlR_MXbmfCpauSWOtYuBT3PTGIBU" class="h-56 object-contain mx-auto mb-4">
+            <h3 class="text-2xl font-extrabold">4T 20W-40</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Synthetic engine oil for bikes — 110cc to 150cc.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-sm text-gray-500">1L / 4L</div>
+              <a href="#contact" class="text-sm font-bold bg-primary text-black px-4 py-2 rounded">Buy Now</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg overflow-hidden reveal skew-deco">
+            <img alt="4T 10W-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjOjM3Ww2EBouBn_d9cRCkfvi7JqqX9-v33R1vgPSsEDY0t2oU_jQ7c46RvtajRdorhH3vpFZVtzRgu20-Iejai1nw6UQurn37fsQaZes8AApksRelcMlcCJhslOadFZsqveAKiPN2PQBhi1VXHhURRHAuoEA_4US0HFqW7OPU4i35WxaCryv2DSJXIkGf3pIXypEoLYNLVMycTjvQIGqgI9AKuf_QuYfnPJt2OQSydSM4vs-VnvoSNiSUfH2qHYx-QxrzUH9i6R8" class="h-56 object-contain mx-auto mb-4">
+            <h3 class="text-2xl font-extrabold">4T 10W-40</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Synthetic oil for sports bikes — 400cc to 650cc.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-sm text-gray-500">1L / 4L</div>
+              <a href="#contact" class="text-sm font-bold bg-primary text-black px-4 py-2 rounded">Buy Now</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="py-20 bg-background-dark text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="reveal">
+            <p class="text-primary font-bold tracking-widest text-sm uppercase mb-4">What Our Distributors Say</p>
+            <blockquote class="text-gray-200 leading-relaxed text-lg">
+              “Partnering with an authorized ENR-G distributor is a highly recommended move for any business prioritizing performance and reliability. They deliver spec-compliant lubricants with the expertise needed to keep operations running smoothly.”
+            </blockquote>
+            <p class="mt-6 font-bold uppercase">Mr. Omprakash Agrawal</p>
+          </div>
+
+          <div class="reveal flex justify-center">
+            <div class="w-full max-w-sm rounded-lg overflow-hidden shadow-2xl">
+              <img alt="avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEoMS8HtHzzfKvdM9rfN60tR1XxnLLrJ_fDGMS1MpX5Gnr1cB20wHTR734W6DqsUPjLdM9vZlVWmCNiuzF6bCytpqCUzfHIydgAzJfXcFru6RDbORORGnPxaD4WEu8VbP-hRJ3sJmQnFpi7xP57NOLLZ6uIo-K-gY_GxmpfUtCQWy2H5J9eH_JC3ei-2mv6WVyQDpzEmoQX1dAuNp_c7J0Y33DS-7BkSwJIn-i7qrHqnjcDTfGH3-EzxWJaYcCqkj6nvCTd5sBJaI" class="w-full h-80 object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT + NEWSLETTER -->
+    <section id="contact" class="py-16 bg-gray-50 dark:bg-black/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 bg-white dark:bg-gray-800 p-8 rounded-lg shadow reveal">
+            <h3 class="text-2xl font-extrabold mb-3">Get in touch</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">Have questions about distributorship or bulk orders? Send us a message and our team will respond quickly.</p>
+
+            <!-- contact form (non-functional - replace action with server endpoint) -->
+            <form action="#" method="POST" class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input name="name" required placeholder="Your name" class="focus-ring p-3 rounded border border-gray-200 dark:border-gray-700 bg-transparent" />
+                <input name="phone" required placeholder="Phone number" class="focus-ring p-3 rounded border border-gray-200 dark:border-gray-700 bg-transparent" />
+              </div>
+
+              <input name="email" required type="email" placeholder="Email address" class="w-full focus-ring p-3 rounded border border-gray-200 dark:border-gray-700 bg-transparent" />
+
+              <select name="topic" class="w-full p-3 rounded border border-gray-200 dark:border-gray-700 bg-transparent">
+                <option>General inquiry</option>
+                <option>Distributorship</option>
+                <option>Bulk order</option>
+                <option>Support</option>
+              </select>
+
+              <textarea name="message" rows="5" placeholder="Tell us about your needs..." class="w-full p-3 rounded border border-gray-200 dark:border-gray-700 bg-transparent"></textarea>
+
+              <div class="flex items-center gap-4">
+                <button type="submit" class="bg-primary text-black font-bold px-6 py-3 rounded">Send Message</button>
+                <p class="text-sm text-gray-500">Or call us: <span class="font-semibold text-gray-700 dark:text-gray-300">+91 85917-62870</span></p>
+              </div>
+            </form>
+          </div>
+
+          <aside class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow reveal">
+            <h4 class="font-bold text-lg mb-3">Subscribe to our newsletter</h4>
+            <p class="text-sm text-gray-500 mb-4">Latest product news, distributor updates and exclusive offers.</p>
+
+            <form action="#" method="POST" class="flex gap-2">
+              <input name="newsletter_email" placeholder="Your email" required class="flex-1 p-3 rounded border border-gray-200 dark:border-gray-700 bg-transparent focus-ring" />
+              <button class="px-4 py-3 rounded bg-primary text-black font-bold">Subscribe</button>
+            </form>
+
+            <div class="mt-6 text-sm text-gray-500">
+              <p class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">location_on</span> C/19, Kandivali Industrial Estate, Kandivali West, Mumbai - 400067</p>
+              <p class="flex items-start gap-2 mt-3"><span class="material-symbols-outlined text-primary">mail</span> info.enrgofficial@gmail.com</p>
+              <p class="flex items-start gap-2 mt-3"><span class="material-symbols-outlined text-primary">call</span> +91 85917-62870</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 bg-gray-800 p-2 rounded-md">
+              <img alt="ENR-G Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4_bVeyy1kcjSP1JM1bvV5ZfcoPqxaDu38EjDa0vc1DnP2jOiVau599OhGUnjNMuAF9cXYVE5oS8u6U6ADXKbFSq-rmlcpOaBSfHfNs5z6xivrxIc5aYbHtNOCFjTCmBmoE9Auf2TWPu7_g-DjdNTsokrHJkD6idIBZ2Tny3LitlVffLnFd1MYhhjDjLBjC7HACN25jwg2B_8LZkWbMJYeuHepQRHeKPC9NsnJGkhJPAa3nWR8eiloWrHprFQxsJmQRVP5brXOS9U" class="w-full h-full object-contain">
+            </div>
+            <div>
+              <p class="text-white font-bold">ENR-G</p>
+              <p class="text-xs text-gray-500">Drive with Confidence</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400 max-w-md">Drive with Confidence with ENR-G Engine Oils. Trusted lubrication for bikes, scooters and high-performance machines.</p>
+
+          <div class="flex gap-3 mt-6">
+            <a class="p-2 rounded hover:text-primary" href="#" aria-label="facebook">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+            </a>
+            <a class="p-2 rounded hover:text-primary" href="#" aria-label="twitter">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
+            </a>
+            <a class="p-2 rounded hover:text-primary" href="#" aria-label="website">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-3 uppercase">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="hover:text-primary">Home</a></li>
+            <li><a href="#about" class="hover:text-primary">About Us</a></li>
+            <li><a href="#products" class="hover:text-primary">Products</a></li>
+            <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-3 uppercase">Contact Info</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-1">location_on</span> C/19, Kandivali Industrial Estate, Kandivali West, Mumbai - 400067.</li>
+            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-1">call</span> +91 85917-62870</li>
+            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-1">mail</span> info.enrgofficial@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-500">
+        <p>© 2025 ENR-G Automotive Lubricants | Powered by InfiiniMark.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Small script for reveals and small UX niceties -->
+<script>
+  // Initialize Alpine and reveal observer is handled by Alpine init function
+  document.addEventListener('alpine:init', () => {
+    // nothing extra here
+  });
+
+  // Add reveal class shows for initial elements already in viewport
+  window.addEventListener('load', () => {
+    // allow Alpine initialization to run first
+    setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('show');
+      });
+    }, 120);
+  });
+
+  // Tiny accessibility improvement: close mobile nav on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const alpine = document.querySelector('[x-data]');
+      if (alpine && alpine.__x) {
+        try { alpine.__x.$data.mobileNavOpen = false; } catch(e){/*ignore*/ }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

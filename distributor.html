@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ENR-G Distributors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#59f425",
+              "background-light": "#f6f8f5",
+              "background-dark": "#142210",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center px-4 sm:px-8 md:px-20 lg:px-40 py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2c4922] px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_543)">
+<path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_543"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">ENR-G</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">Products</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">About Us</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Distributors</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">Contact</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Login</span>
+</button>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden">
+<button class="text-white">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- HeroSection -->
+<div class="py-10">
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="Abstract image of clean, metallic engine parts in motion" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAY4aRWdSuFz0Gf9kpq25Hb21-mWl71NSUFEAZYDOvkbU0y0_GNfJqXNdQ-00m5QTl1dUsKIi3fT_xibg0qTzFe2ju8w6gOmzp1k6ISw8O4xwkzABxXZREnktH1rcGfkiAffcbPBpKCWlqB0gehC6EkX9ElKo50oyHxqHoez6KE-SLWQtYtFSvBXg5MFfKX-UjSozSeGn-hcOQSd4etGjR6kOpB5Pm9xhHIkmGoGJ75DLRMlix9iRzfdLfAwFXjl0Y0D8JyegwyDHw");'>
+<div class="flex flex-col gap-2 text-left max-w-2xl">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                                Partner with the Future of Performance.
+                                            </h1>
+<h2 class="text-gray-200 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                                Join us in driving mutual growth and innovation in the automotive lubricant industry.
+                                            </h2>
+</div>
+<div class="flex-wrap gap-3 flex">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+<span class="truncate">Apply Now</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#2c4922] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+<span class="truncate">Learn More</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FeatureSection -->
+<div class="flex flex-col gap-10 px-4 py-10 @container">
+<div class="flex flex-col gap-4 text-center items-center">
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
+                                    Why Partner with ENR-G?
+                                </h1>
+<p class="text-gray-300 text-base font-normal leading-normal max-w-[720px]">
+                                    Gain a competitive edge with our premium products, dedicated support, and a partnership built for success.
+                                </p>
+</div>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 p-0">
+<div class="flex flex-1 gap-3 rounded-lg border border-[#3f6831] bg-[#1f3418] p-4 flex-col">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">verified_user</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-base font-bold leading-tight">Superior Product Line</h2>
+<p class="text-[#9fcb90] text-sm font-normal leading-normal">Offer your customers cutting-edge lubricants engineered for maximum performance and protection.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-lg border border-[#3f6831] bg-[#1f3418] p-4 flex-col">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">campaign</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-base font-bold leading-tight">Marketing Support</h2>
+<p class="text-[#9fcb90] text-sm font-normal leading-normal">Leverage our comprehensive marketing materials and brand recognition to drive sales.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-lg border border-[#3f6831] bg-[#1f3418] p-4 flex-col">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">map</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-base font-bold leading-tight">Exclusive Territories</h2>
+<p class="text-[#9fcb90] text-sm font-normal leading-normal">Benefit from protected territories, giving you a unique advantage in your market.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-lg border border-[#3f6831] bg-[#1f3418] p-4 flex-col">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">trending_up</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-base font-bold leading-tight">Competitive Margins</h2>
+<p class="text-[#9fcb90] text-sm font-normal leading-normal">Enjoy attractive pricing structures and margins that help accelerate your business growth.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Program Details Section with Tabs -->
+<div class="py-10">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 text-center">The Distributor Program</h2>
+<div class="pb-3">
+<div class="flex justify-center border-b border-[#3f6831] px-4 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-white pb-[13px] pt-4" href="#">
+<p class="text-white text-sm font-bold leading-normal tracking-[0.015em]">Program Tiers</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#9fcb90] pb-[13px] pt-4" href="#">
+<p class="text-[#9fcb90] text-sm font-bold leading-normal tracking-[0.015em]">Marketing Support</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#9fcb90] pb-[13px] pt-4" href="#">
+<p class="text-[#9fcb90] text-sm font-bold leading-normal tracking-[0.015em]">Onboarding Process</p>
+</a>
+</div>
+</div>
+<div class="p-6 text-gray-300 bg-[#1f3418]/50 rounded-b-lg">
+<p class="max-w-3xl mx-auto text-center">Our program is structured into tiers to reward growth and commitment. Each tier—Silver, Gold, and Platinum—unlocks greater benefits, including improved pricing, increased marketing co-op funds, and dedicated account management. We provide a clear path for advancement, ensuring that our partnership is mutually beneficial and geared for long-term success.</p>
+</div>
+</div>
+<!-- Testimonials Section -->
+<div class="flex flex-col gap-10 px-4 py-16 @container">
+<div class="flex flex-col gap-4 text-center">
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto">
+                                    Hear From Our Valued Partners
+                                </h1>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-0">
+<div class="flex flex-col gap-4 rounded-lg border border-[#3f6831] bg-[#1f3418] p-6">
+<p class="text-gray-300 italic">"Partnering with ENR-G was a game-changer for our business. Their products are unmatched in quality, and the support we receive is second to none."</p>
+<div class="flex items-center gap-3 mt-auto">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of John Doe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVZJo6pzS0DXHh6cjMR9pySDv7CNe8pDn0iItFd344GKk3gyaQvyK11pqX6USlLpgkuwKeWec4wAEza3ZPHfcGV23blfqo57qbAcO0acSWTqHsgYLHjHXMRbDM1XIwrb5942wYcM6LFx0q3rDUSIYcw3QSR3kbetpqR1pBQHintyBEYFjDbq1mXkSCnYFOSi04QPFylgRQd6d5FEIfY3u5RoF73avoebNpHHZTLLquKEBxfBKkuZ-7oGD8Na5D7nYCrCmvyt7xPI4"/>
+<div>
+<h3 class="text-white font-bold">John Doe</h3>
+<p class="text-sm text-[#9fcb90]">CEO, Auto Performance Inc.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg border border-[#3f6831] bg-[#1f3418] p-6">
+<p class="text-gray-300 italic">"The exclusive territory rights gave us the confidence to invest heavily in marketing ENR-G. The results have been phenomenal."</p>
+<div class="flex items-center gap-3 mt-auto">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of Jane Smith" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtlqbZXW3BFyvFH715aY7rhDCl4KpC9nfKsgVIBwt1c4HLxv_lWdxiVz24Jh9-SNTWVe6p_4JgrvzBzc5xn2ytujd37ogsi03DX0XGV2laG3G2hTIO08gUj25cN2-jh9_Xhe0qbsC3m5TQdEXkJ-IisKiOfu7ffoGUtojb2BZVqw3BTYUF5Q3MkmOwzPL-RF03PQB5xgt75eZm-V8yUnx-i4JzZfQ-i0dIyvIJIuHkrtpGvXSTtDuBUh5CwFlpmmcSPzt_6_jCzyY"/>
+<div>
+<h3 class="text-white font-bold">Jane Smith</h3>
+<p class="text-sm text-[#9fcb90]">Owner, Velocity Parts</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg border border-[#3f6831] bg-[#1f3418] p-6">
+<p class="text-gray-300 italic">"From onboarding to ongoing training, the ENR-G team has been with us every step of the way. It feels like a true partnership."</p>
+<div class="flex items-center gap-3 mt-auto">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of Samuel Lee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcV0UoVHlifZVcJU9MxrsBIpd2Ye4UC0NVuMpv1EzzTjmqCWacwZYhmkbe4KiIBK1uBbEuOt0j_2Mxef7OB07dwlRrjG2Y0RcgjVdjbjdD1IIqQjEb-jnxPsDdSEtp9dyNofDMlkge7h2Sv9CvJrAsbiJTh4jwi1LnHxV-jsPO5rl7Pn0KXzTRqTCJFo7TY0f7ScXKa2Vfg2g5BU0mkcPLuMUYzcWk4c54IqZTH_tfMQksMOgnR7tsabutwDuf_E1Ni1Q4ugbsCqU"/>
+<div>
+<h3 class="text-white font-bold">Samuel Lee</h3>
+<p class="text-sm text-[#9fcb90]">Manager, DriveLine Distributors</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA / Inquiry Form Section -->
+<div class="py-16">
+<div class="bg-[#1f3418] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+<div class="flex-1 text-center lg:text-left">
+<h2 class="text-white text-3xl lg:text-4xl font-black leading-tight tracking-[-0.033em] mb-4">
+                                        Ready to Accelerate Your Business?
+                                    </h2>
+<p class="text-gray-300 mb-6">
+                                        Take the next step towards a profitable partnership. Fill out the form to request more information, and a member of our team will be in touch shortly.
+                                    </p>
+</div>
+<div class="w-full flex-1 max-w-lg">
+<form class="flex flex-col gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<input class="bg-[#2c4922] border border-[#3f6831] text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary" placeholder="Full Name" type="text"/>
+<input class="bg-[#2c4922] border border-[#3f6831] text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary" placeholder="Company Name" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<input class="bg-[#2c4922] border border-[#3f6831] text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary" placeholder="Email Address" type="email"/>
+<input class="bg-[#2c4922] border border-[#3f6831] text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary" placeholder="Phone Number" type="tel"/>
+</div>
+<textarea class="bg-[#2c4922] border border-[#3f6831] text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary" placeholder="Your Message" rows="4"></textarea>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em]" type="submit">
+<span class="truncate">Request Information</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ENR-G Distributors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#59f425",
+              "background-light": "#f6f8f5",
+              "background-dark": "#142210",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center px-4 sm:px-8 md:px-20 lg:px-40 py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2c4922] px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_543)">
+<path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_543"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">ENR-G</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">Products</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">About Us</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Distributors</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">Contact</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Login</span>
+</button>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden">
+<button class="text-white">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- HeroSection -->
+<div class="py-10">
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="Abstract image of clean, metallic engine parts in motion" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAY4aRWdSuFz0Gf9kpq25Hb21-mWl71NSUFEAZYDOvkbU0y0_GNfJqXNdQ-00m5QTl1dUsKIi3fT_xibg0qTzFe2ju8w6gOmzp1k6ISw8O4xwkzABxXZREnktH1rcGfkiAffcbPBpKCWlqB0gehC6EkX9ElKo50oyHxqHoez6KE-SLWQtYtFSvBXg5MFfKX-UjSozSeGn-hcOQSd4etGjR6kOpB5Pm9xhHIkmGoGJ75DLRMlix9iRzfdLfAwFXjl0Y0D8JyegwyDHw");'>
+<div class="flex flex-col gap-2 text-left max-w-2xl">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                                Partner with the Future of Performance.
+                                            </h1>
+<h2 class="text-gray-200 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                                Join us in driving mutual growth and innovation in the automotive lubricant industry.
+                                            </h2>
+</div>
+<div class="flex-wrap gap-3 flex">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+<span class="truncate">Apply Now</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#2c4922] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+<span class="truncate">Learn More</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FeatureSection -->
+<div class="flex flex-col gap-10 px-4 py-10 @container">
+<div class="flex flex-col gap-4 text-center items-center">
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
+                                    Why Partner with ENR-G?
+                                </h1>
+<p class="text-gray-300 text-base font-normal leading-normal max-w-[720px]">
+                                    Gain a competitive edge with our premium products, dedicated support, and a partnership built for success.
+                                </p>
+</div>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 p-0">
+<div class="flex flex-1 gap-3 rounded-lg border border-[#3f6831] bg-[#1f3418] p-4 flex-col">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">verified_user</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-base font-bold leading-tight">Superior Product Line</h2>
+<p class="text-[#9fcb90] text-sm font-normal leading-normal">Offer your customers cutting-edge lubricants engineered for maximum performance and protection.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-lg border border-[#3f6831] bg-[#1f3418] p-4 flex-col">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">campaign</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-base font-bold leading-tight">Marketing Support</h2>
+<p class="text-[#9fcb90] text-sm font-normal leading-normal">Leverage our comprehensive marketing materials and brand recognition to drive sales.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-lg border border-[#3f6831] bg-[#1f3418] p-4 flex-col">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">map</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-base font-bold leading-tight">Exclusive Territories</h2>
+<p class="text-[#9fcb90] text-sm font-normal leading-normal">Benefit from protected territories, giving you a unique advantage in your market.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-lg border border-[#3f6831] bg-[#1f3418] p-4 flex-col">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">trending_up</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-base font-bold leading-tight">Competitive Margins</h2>
+<p class="text-[#9fcb90] text-sm font-normal leading-normal">Enjoy attractive pricing structures and margins that help accelerate your business growth.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Program Details Section with Tabs -->
+<div class="py-10">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 text-center">The Distributor Program</h2>
+<div class="pb-3">
+<div class="flex justify-center border-b border-[#3f6831] px-4 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-white pb-[13px] pt-4" href="#">
+<p class="text-white text-sm font-bold leading-normal tracking-[0.015em]">Program Tiers</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#9fcb90] pb-[13px] pt-4" href="#">
+<p class="text-[#9fcb90] text-sm font-bold leading-normal tracking-[0.015em]">Marketing Support</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#9fcb90] pb-[13px] pt-4" href="#">
+<p class="text-[#9fcb90] text-sm font-bold leading-normal tracking-[0.015em]">Onboarding Process</p>
+</a>
+</div>
+</div>
+<div class="p-6 text-gray-300 bg-[#1f3418]/50 rounded-b-lg">
+<p class="max-w-3xl mx-auto text-center">Our program is structured into tiers to reward growth and commitment. Each tier—Silver, Gold, and Platinum—unlocks greater benefits, including improved pricing, increased marketing co-op funds, and dedicated account management. We provide a clear path for advancement, ensuring that our partnership is mutually beneficial and geared for long-term success.</p>
+</div>
+</div>
+<!-- Testimonials Section -->
+<div class="flex flex-col gap-10 px-4 py-16 @container">
+<div class="flex flex-col gap-4 text-center">
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto">
+                                    Hear From Our Valued Partners
+                                </h1>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-0">
+<div class="flex flex-col gap-4 rounded-lg border border-[#3f6831] bg-[#1f3418] p-6">
+<p class="text-gray-300 italic">"Partnering with ENR-G was a game-changer for our business. Their products are unmatched in quality, and the support we receive is second to none."</p>
+<div class="flex items-center gap-3 mt-auto">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of John Doe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVZJo6pzS0DXHh6cjMR9pySDv7CNe8pDn0iItFd344GKk3gyaQvyK11pqX6USlLpgkuwKeWec4wAEza3ZPHfcGV23blfqo57qbAcO0acSWTqHsgYLHjHXMRbDM1XIwrb5942wYcM6LFx0q3rDUSIYcw3QSR3kbetpqR1pBQHintyBEYFjDbq1mXkSCnYFOSi04QPFylgRQd6d5FEIfY3u5RoF73avoebNpHHZTLLquKEBxfBKkuZ-7oGD8Na5D7nYCrCmvyt7xPI4"/>
+<div>
+<h3 class="text-white font-bold">John Doe</h3>
+<p class="text-sm text-[#9fcb90]">CEO, Auto Performance Inc.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg border border-[#3f6831] bg-[#1f3418] p-6">
+<p class="text-gray-300 italic">"The exclusive territory rights gave us the confidence to invest heavily in marketing ENR-G. The results have been phenomenal."</p>
+<div class="flex items-center gap-3 mt-auto">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of Jane Smith" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtlqbZXW3BFyvFH715aY7rhDCl4KpC9nfKsgVIBwt1c4HLxv_lWdxiVz24Jh9-SNTWVe6p_4JgrvzBzc5xn2ytujd37ogsi03DX0XGV2laG3G2hTIO08gUj25cN2-jh9_Xhe0qbsC3m5TQdEXkJ-IisKiOfu7ffoGUtojb2BZVqw3BTYUF5Q3MkmOwzPL-RF03PQB5xgt75eZm-V8yUnx-i4JzZfQ-i0dIyvIJIuHkrtpGvXSTtDuBUh5CwFlpmmcSPzt_6_jCzyY"/>
+<div>
+<h3 class="text-white font-bold">Jane Smith</h3>
+<p class="text-sm text-[#9fcb90]">Owner, Velocity Parts</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg border border-[#3f6831] bg-[#1f3418] p-6">
+<p class="text-gray-300 italic">"From onboarding to ongoing training, the ENR-G team has been with us every step of the way. It feels like a true partnership."</p>
+<div class="flex items-center gap-3 mt-auto">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of Samuel Lee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcV0UoVHlifZVcJU9MxrsBIpd2Ye4UC0NVuMpv1EzzTjmqCWacwZYhmkbe4KiIBK1uBbEuOt0j_2Mxef7OB07dwlRrjG2Y0RcgjVdjbjdD1IIqQjEb-jnxPsDdSEtp9dyNofDMlkge7h2Sv9CvJrAsbiJTh4jwi1LnHxV-jsPO5rl7Pn0KXzTRqTCJFo7TY0f7ScXKa2Vfg2g5BU0mkcPLuMUYzcWk4c54IqZTH_tfMQksMOgnR7tsabutwDuf_E1Ni1Q4ugbsCqU"/>
+<div>
+<h3 class="text-white font-bold">Samuel Lee</h3>
+<p class="text-sm text-[#9fcb90]">Manager, DriveLine Distributors</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA / Inquiry Form Section -->
+<div class="py-16">
+<div class="bg-[#1f3418] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+<div class="flex-1 text-center lg:text-left">
+<h2 class="text-white text-3xl lg:text-4xl font-black leading-tight tracking-[-0.033em] mb-4">
+                                        Ready to Accelerate Your Business?
+                                    </h2>
+<p class="text-gray-300 mb-6">
+                                        Take the next step towards a profitable partnership. Fill out the form to request more information, and a member of our team will be in touch shortly.
+                                    </p>
+</div>
+<div class="w-full flex-1 max-w-lg">
+<form class="flex flex-col gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<input class="bg-[#2c4922] border border-[#3f6831] text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary" placeholder="Full Name" type="text"/>
+<input class="bg-[#2c4922] border border-[#3f6831] text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary" placeholder="Company Name" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<input class="bg-[#2c4922] border border-[#3f6831] text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary" placeholder="Email Address" type="email"/>
+<input class="bg-[#2c4922] border border-[#3f6831] text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary" placeholder="Phone Number" type="tel"/>
+</div>
+<textarea class="bg-[#2c4922] border border-[#3f6831] text-white placeholder-gray-400 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary" placeholder="Your Message" rows="4"></textarea>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em]" type="submit">
+<span class="truncate">Request Information</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>
