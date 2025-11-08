@@ -1,211 +1,176 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - ENR-G</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-  <style>
-    .material-symbols-outlined {
-      font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24
-    }
-    html, body {
-      scroll-behavior: smooth;
-    }
-  </style>
-  <script id="tailwind-config">
+
+  <script>
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
-            "primary": "#59f425",
-            "background-light": "#f6f8f5",
-            "background-dark": "#142210",
+            primary: "#00ff66",
+            dark: "#0a0a0a",
+            card: "#111a11",
+            border: "#1b3d1b",
           },
           fontFamily: {
-            "display": ["Space Grotesk", "sans-serif"]
+            display: ["Space Grotesk", "sans-serif"],
           },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
+          boxShadow: {
+            glow: "0 0 12px #00ff6680",
           },
         },
       },
-    }
+    };
   </script>
+
+  <style>
+    html, body {
+      scroll-behavior: smooth;
+    }
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    }
+  </style>
 </head>
-<body class="font-display overflow-x-hidden bg-background-light dark:bg-background-dark text-white">
 
-  <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
-    <div class="layout-container flex h-full grow flex-col">
-      <div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
-        <div class="layout-content-container flex flex-col max-w-6xl flex-1">
+<body class="bg-dark text-gray-200 font-display overflow-x-hidden">
 
-          <!-- HEADER -->
-          <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 dark:border-b-[#2c4922] px-4 sm:px-10 py-3">
-            <div class="flex items-center gap-4 text-white">
-              <div class="size-6 text-primary">
-                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_6_543)">
-                    <path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
-                  </g>
-                </svg>
-              </div>
-              <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">ENR-G</h2>
-            </div>
-            <div class="hidden md:flex flex-1 justify-end gap-8">
-              <div class="flex items-center gap-9">
-                <a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="index.html">Home</a>
-                <a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="product.html">Products</a>
-                <a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="about.html">About Us</a>
-                <a class="text-white text-sm font-medium leading-normal" href="contact.html">Contact Us</a>
-              </div>
-              <button id="openLogin" class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
-                <span class="truncate">Distributor Login</span>
-              </button>
-            </div>
-          </header>
+  <!-- HEADER -->
+  <header class="flex items-center justify-between px-6 md:px-16 py-4 border-b border-border bg-black/60 backdrop-blur">
+    <div class="flex items-center gap-3">
+      <svg class="w-7 h-7 text-primary" fill="currentColor" viewBox="0 0 48 48">
+        <path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z"></path>
+      </svg>
+      <h1 class="text-white font-bold text-xl tracking-tight">ENR-G</h1>
+    </div>
 
-          <!-- MAIN CONTENT -->
-          <main class="flex flex-col gap-16 md:gap-24 py-16 md:py-24">
-            <div class="flex flex-wrap justify-between gap-3 p-4">
-              <div class="flex min-w-72 flex-col gap-3">
-                <p class="text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">Connect With ENR-G</p>
-                <p class="text-white/60 dark:text-[#9fcb90] text-base font-normal leading-normal max-w-lg">
-                  Reach out to our team for sales, support, or partnership inquiries. We're committed to providing high-performance solutions and exceptional service.
-                </p>
-              </div>
-            </div>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+      <a class="hover:text-primary transition-colors" href="product.html">Products</a>
+      <a class="hover:text-primary transition-colors" href="distributor.html">Distributors</a>
+      <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+    </nav>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-              <div class="flex flex-col gap-8">
-                <div class="flex flex-col gap-4">
-                  <!-- Contact Info -->
-                  <div class="flex items-center gap-4 bg-transparent px-4 min-h-[72px] py-2 justify-between border-b border-white/10 dark:border-[#2c4922]">
-                    <div class="flex items-center gap-4">
-                      <div class="text-primary flex items-center justify-center rounded-lg bg-white/5 dark:bg-[#2c4922] shrink-0 size-12">
-                        <span class="material-symbols-outlined">mail</span>
-                      </div>
-                      <div class="flex flex-col justify-center">
-                        <p class="text-white text-base font-medium leading-normal">info@enr-g.com</p>
-                        <p class="text-white/60 dark:text-[#9fcb90] text-sm font-normal">General Inquiries</p>
-                      </div>
-                    </div>
-                    <div class="shrink-0"><button class="text-primary text-sm font-medium leading-normal hover:underline">Copy</button></div>
-                  </div>
+    <button id="openLogin" class="hidden md:inline-flex bg-primary text-black font-bold px-5 py-2 rounded-lg hover:shadow-glow transition">
+      Distributor Login
+    </button>
 
-                  <div class="flex items-center gap-4 bg-transparent px-4 min-h-[72px] py-2 justify-between border-b border-white/10 dark:border-[#2c4922]">
-                    <div class="flex items-center gap-4">
-                      <div class="text-primary flex items-center justify-center rounded-lg bg-white/5 dark:bg-[#2c4922] shrink-0 size-12">
-                        <span class="material-symbols-outlined">call</span>
-                      </div>
-                      <div class="flex flex-col justify-center">
-                        <p class="text-white text-base font-medium leading-normal">+1 (800) 555-0199</p>
-                        <p class="text-white/60 dark:text-[#9fcb90] text-sm font-normal">Sales &amp; Support</p>
-                      </div>
-                    </div>
-                    <div class="shrink-0"><button class="text-primary text-sm font-medium leading-normal hover:underline">Call</button></div>
-                  </div>
+    <button class="md:hidden text-white text-3xl material-symbols-outlined">menu</button>
+  </header>
 
-                  <div class="flex items-center gap-4 bg-transparent px-4 min-h-[72px] py-2 justify-between border-b border-white/10 dark:border-[#2c4922]">
-                    <div class="flex items-center gap-4">
-                      <div class="text-primary flex items-center justify-center rounded-lg bg-white/5 dark:bg-[#2c4922] shrink-0 size-12">
-                        <span class="material-symbols-outlined">location_pin</span>
-                      </div>
-                      <div class="flex flex-col justify-center">
-                        <p class="text-white text-base font-medium leading-normal">C/19, Kandivali Industrial Estate, Kandivali West, Mumbai – 400067</p>
-                        <p class="text-white/60 dark:text-[#9fcb90] text-sm font-normal">Corporate Office</p>
-                      </div>
-                    </div>
-                    <div class="shrink-0"><button class="text-primary text-sm font-medium leading-normal hover:underline">Directions</button></div>
-                  </div>
-                </div>
+  <!-- HERO -->
+  <section class="relative bg-[url('https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative z-10 px-6 md:px-16 py-24 flex flex-col justify-center items-start max-w-3xl">
+      <h2 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">Get in Touch with ENR-G</h2>
+      <p class="text-gray-300 mb-6">We’re here to help with product information, dealership inquiries, or general questions. Let’s connect.</p>
+      <button class="bg-primary text-black font-bold px-6 py-3 rounded-lg hover:shadow-glow transition">Contact Us</button>
+    </div>
+  </section>
 
-                <!-- REAL GOOGLE MAP EMBED -->
-                <div class="w-full h-80 rounded-xl overflow-hidden">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.027918051633!2d73.780705!3d18.567764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf9ebff9f77f%3A0x4a2c7b0c3ff7bcae!2sBrainstorm%20Force%20LLP!5e0!3m2!1sen!2sin!4v1664973742270!5m2!1sen!2sin" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                  </iframe>
-                </div>
-              </div>
+  <!-- CONTACT SECTION -->
+  <section class="py-20 px-6 md:px-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- LEFT INFO -->
+      <div class="flex flex-col gap-8">
+        <h3 class="text-3xl font-black text-white mb-2">Reach Us</h3>
+        <p class="text-gray-400 mb-6 max-w-md">Our team is always ready to assist you. Whether it’s technical help, distribution opportunities, or general info, we’ve got you covered.</p>
 
-              <!-- Contact Form -->
-              <div class="bg-white/5 dark:bg-[#152310] border border-white/10 dark:border-[#2c4922] p-8 rounded-xl flex flex-col gap-6">
-                <h3 class="text-white text-2xl font-bold">Send us a message</h3>
-                <form action="#" class="flex flex-col gap-4" method="POST">
-                  <div>
-                    <label for="full-name" class="block text-sm font-medium text-white/80 mb-1.5">Full Name</label>
-                    <input id="full-name" name="full-name" type="text" placeholder="John Doe" class="block w-full rounded-lg border-white/10 bg-white/5 py-2.5 px-3.5 text-white placeholder:text-white/40 focus:ring-2 focus:ring-inset focus:ring-primary text-sm"/>
-                  </div>
-                  <div>
-                    <label for="email" class="block text-sm font-medium text-white/80 mb-1.5">Email</label>
-                    <input id="email" name="email" type="email" placeholder="you@example.com" class="block w-full rounded-lg border-white/10 bg-white/5 py-2.5 px-3.5 text-white placeholder:text-white/40 focus:ring-2 focus:ring-inset focus:ring-primary text-sm"/>
-                  </div>
-                  <div>
-                    <label for="subject" class="block text-sm font-medium text-white/80 mb-1.5">Subject</label>
-                    <input id="subject" name="subject" type="text" placeholder="Inquiry about..." class="block w-full rounded-lg border-white/10 bg-white/5 py-2.5 px-3.5 text-white placeholder:text-white/40 focus:ring-2 focus:ring-inset focus:ring-primary text-sm"/>
-                  </div>
-                  <div>
-                    <label for="message" class="block text-sm font-medium text-white/80 mb-1.5">Message</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Your message here..." class="block w-full rounded-lg border-white/10 bg-white/5 py-2.5 px-3.5 text-white placeholder:text-white/40 focus:ring-2 focus:ring-inset focus:ring-primary text-sm"></textarea>
-                  </div>
-                  <div>
-                    <button type="submit" class="w-full flex items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-bold text-background-dark shadow-sm hover:bg-primary/90 transition-colors">Send Message</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </main>
-
-          <!-- FOOTER -->
-          <footer class="text-white/60 text-sm py-8 border-t border-white/10">
-            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p>© 2024 ENR-G Automotive Lubricants. All rights reserved.</p>
-              <div class="flex items-center gap-4">
-                <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a>
-              </div>
-            </div>
-          </footer>
-
+        <div class="flex items-start gap-4 border-b border-border pb-4">
+          <div class="bg-card border border-border p-3 rounded-lg">
+            <span class="material-symbols-outlined text-primary text-2xl">mail</span>
+          </div>
+          <div>
+            <p class="font-semibold text-white">info@enr-g.com</p>
+            <p class="text-sm text-gray-400">General Inquiries</p>
+          </div>
         </div>
+
+        <div class="flex items-start gap-4 border-b border-border pb-4">
+          <div class="bg-card border border-border p-3 rounded-lg">
+            <span class="material-symbols-outlined text-primary text-2xl">call</span>
+          </div>
+          <div>
+            <p class="font-semibold text-white">+91 98765 43210</p>
+            <p class="text-sm text-gray-400">Sales & Support</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="bg-card border border-border p-3 rounded-lg">
+            <span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+          </div>
+          <div>
+            <p class="font-semibold text-white">C/19, Kandivali Industrial Estate, Mumbai – 400067</p>
+            <p class="text-sm text-gray-400">Corporate Office</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div class="bg-card border border-border p-8 rounded-2xl shadow-glow">
+        <h3 class="text-2xl font-bold text-white mb-6">Send us a message</h3>
+        <form action="#" method="POST" class="flex flex-col gap-4">
+          <div>
+            <label class="text-sm font-medium text-gray-400">Full Name</label>
+            <input type="text" placeholder="John Doe" class="w-full mt-1 bg-dark border border-border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-primary transition">
+          </div>
+          <div>
+            <label class="text-sm font-medium text-gray-400">Email Address</label>
+            <input type="email" placeholder="you@example.com" class="w-full mt-1 bg-dark border border-border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-primary transition">
+          </div>
+          <div>
+            <label class="text-sm font-medium text-gray-400">Subject</label>
+            <input type="text" placeholder="Inquiry about..." class="w-full mt-1 bg-dark border border-border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-primary transition">
+          </div>
+          <div>
+            <label class="text-sm font-medium text-gray-400">Message</label>
+            <textarea rows="4" placeholder="Your message here..." class="w-full mt-1 bg-dark border border-border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-primary transition"></textarea>
+          </div>
+          <button type="submit" class="bg-primary text-black font-bold rounded-lg py-3 hover:shadow-glow transition">Send Message</button>
+        </form>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- DISTRIBUTOR LOGIN SLIDE PANEL -->
-  <div id="loginPanel" class="fixed top-0 left-0 w-full h-0 overflow-hidden bg-background-dark/95 backdrop-blur-lg transition-all duration-500 ease-in-out z-50 flex flex-col items-center justify-center opacity-0">
-    <div class="bg-white/5 dark:bg-[#152310] border border-white/10 dark:border-[#2c4922] p-8 rounded-xl w-full max-w-md mx-auto flex flex-col gap-6 shadow-lg">
-      <div class="flex justify-between items-center">
+  <!-- FOOTER -->
+  <footer class="text-center py-6 border-t border-border text-gray-500 text-sm">
+    © 2025 ENR-G Automotive Lubricants. All rights reserved.
+  </footer>
+
+  <!-- DISTRIBUTOR LOGIN MODAL -->
+  <div id="loginPanel" class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-all duration-500 z-50">
+    <div class="bg-card border border-border p-8 rounded-xl w-full max-w-md shadow-glow transform scale-90 transition-all duration-500">
+      <div class="flex justify-between items-center mb-6">
         <h3 class="text-2xl font-bold text-primary">Distributor Login</h3>
-        <button id="closeLogin" class="text-white hover:text-primary transition-colors material-symbols-outlined">close</button>
+        <button id="closeLogin" class="text-white hover:text-primary transition material-symbols-outlined">close</button>
       </div>
-      <form action="distributor_login.php" method="POST" class="flex flex-col gap-4">
+      <form id="loginForm" action="#" method="POST" class="flex flex-col gap-4">
         <div>
-          <label for="emailLogin" class="block text-sm font-medium text-white/80 mb-1.5">Email</label>
-          <input id="emailLogin" name="email" type="email" placeholder="you@distributor.com" class="block w-full rounded-lg border-white/10 bg-white/5 py-2.5 px-3.5 text-white placeholder:text-white/40 focus:ring-2 focus:ring-inset focus:ring-primary text-sm"/>
+          <label class="text-sm font-medium text-gray-400">Email</label>
+          <input type="email" placeholder="you@distributor.com" class="w-full mt-1 bg-dark border border-border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-primary transition" required>
         </div>
         <div>
-          <label for="passwordLogin" class="block text-sm font-medium text-white/80 mb-1.5">Password</label>
-          <input id="passwordLogin" name="password" type="password" placeholder="••••••••" class="block w-full rounded-lg border-white/10 bg-white/5 py-2.5 px-3.5 text-white placeholder:text-white/40 focus:ring-2 focus:ring-inset focus:ring-primary text-sm"/>
+          <label class="text-sm font-medium text-gray-400">Password</label>
+          <input type="password" placeholder="••••••••" class="w-full mt-1 bg-dark border border-border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-primary transition" required>
         </div>
-        <button type="submit" class="w-full flex items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-bold text-background-dark shadow-sm hover:bg-primary/90 transition-colors">Login</button>
-        <p class="text-sm text-center text-white/60 mt-2">Forgot password? <a href="#" class="text-primary hover:underline">Reset here</a></p>
+        <button type="submit" class="bg-primary text-black font-bold rounded-lg py-3 hover:shadow-glow transition">Login</button>
+        <p class="text-sm text-center text-gray-400 mt-2">Forgot password? <a href="#" class="text-primary hover:underline">Reset here</a></p>
       </form>
     </div>
   </div>
@@ -214,15 +179,24 @@
     const openBtn = document.getElementById('openLogin');
     const closeBtn = document.getElementById('closeLogin');
     const panel = document.getElementById('loginPanel');
+    const modalBox = panel.querySelector('div');
 
     openBtn.addEventListener('click', () => {
-      panel.style.height = '100vh';
-      panel.style.opacity = '1';
+      panel.classList.remove('opacity-0', 'pointer-events-none');
+      modalBox.classList.remove('scale-90');
+      modalBox.classList.add('scale-100');
     });
 
     closeBtn.addEventListener('click', () => {
-      panel.style.height = '0';
-      panel.style.opacity = '0';
+      panel.classList.add('opacity-0', 'pointer-events-none');
+      modalBox.classList.add('scale-90');
+    });
+
+    // prevent actual form submit (demo)
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('✅ Logged in successfully!');
+      panel.classList.add('opacity-0', 'pointer-events-none');
     });
   </script>
 

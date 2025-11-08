@@ -4,25 +4,35 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - ENR-G Automotive Lubricants</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
   <style>
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
     }
+    html, body {
+      scroll-behavior: smooth;
+    }
   </style>
+
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
-            "primary": "#59f425",
-            "background-dark": "#142210",
+            primary: "#00ff66",
+            "background-dark": "#0a0a0a",
+            accent: "#1a1a1a"
           },
           fontFamily: {
-            "display": ["Space Grotesk", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
           },
         },
       },
@@ -30,30 +40,28 @@
   </script>
 </head>
 
-<body class="bg-background-dark font-display text-white">
+<body class="bg-background-dark text-white font-display overflow-x-hidden">
   <div class="flex flex-col min-h-screen">
 
     <!-- HEADER -->
-    <header class="border-b border-white/10">
+    <header class="border-b border-white/10 bg-black/30 backdrop-blur-lg sticky top-0 z-50">
       <div class="container mx-auto flex items-center justify-between px-6 py-4">
         <div class="flex items-center gap-3">
           <div class="text-primary">
             <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 48 48">
-              <path d="M42.17 20.17L27.82 5.82..."></path>
+              <path d="M42.17 20.17L27.82 5.82C29.13 7.13 28.39 10.18 26.19 13.76C24.85 15.95 22.96 18.34 20.65 20.65C18.34 22.96 15.95 24.85 13.76 26.19C10.18 28.39 7.13 29.13 5.82 27.82L20.17 42.17C21.48 43.48 24.53 42.75 28.11 40.55C30.3 39.2 32.69 37.3 35 35C37.3 32.69 39.2 30.3 40.55 28.11C42.75 24.53 43.48 21.48 42.17 20.17Z"/>
             </svg>
           </div>
-          <h2 class="font-bold text-lg">ENR-G</h2>
+          <h2 class="font-bold text-lg tracking-wide">ENR-G</h2>
         </div>
+ <nav class="hidden md:flex items-center gap-6 text-sm">
+  <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+  <a class="hover:text-primary transition-colors" href="product.html">Products</a>
+  <a class="hover:text-primary transition-colors" href="distributor.html">Distributors</a>
+  <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+</nav>
 
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-white/70 hover:text-white">Home</a>
-          <a href="about.html" class="text-primary font-semibold">About Us</a>
-          <a href="distributors.html" class="text-white/70 hover:text-white">Distributors</a>
-          <a href="products.html" class="text-white/70 hover:text-white">Products</a>
-          <a href="contact.html" class="text-white/70 hover:text-white">Contact</a>
-        </nav>
-
-        <a href="contact.html" class="hidden md:inline-block bg-primary text-background-dark px-4 py-2 rounded-lg font-bold hover:bg-primary/90">Let’s Talk</a>
+        <a href="contact.html" class="hidden md:inline-block bg-primary text-black px-5 py-2 rounded-lg font-bold hover:bg-primary/90 transition-colors shadow-md">Let’s Talk</a>
 
         <button class="md:hidden text-white">
           <span class="material-symbols-outlined">menu</span>
@@ -61,95 +69,100 @@
       </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section class="relative bg-[url('https://images.unsplash.com/photo-1541348263662-e3415c2d38aa?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center">
-      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/60"></div>
       <div class="relative container mx-auto px-6 py-32 text-center">
-        <h1 class="text-5xl font-black mb-4">About ENR-G Automotive Lubricants</h1>
-        <p class="text-white/80 max-w-2xl mx-auto">Powering Performance, Protecting Your Engine.</p>
+        <h1 class="text-5xl md:text-6xl font-black mb-4 tracking-tight">About ENR-G Automotive Lubricants</h1>
+        <p class="text-white/80 max-w-2xl mx-auto text-lg">Powering Performance. Protecting Your Engine.</p>
       </div>
     </section>
 
     <!-- ABOUT SECTION -->
-    <section class="container mx-auto px-6 py-16">
+    <section class="container mx-auto px-6 py-20">
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <h2 class="text-3xl font-bold mb-4 text-primary">ENR-G: Powering Performance, Protecting Your Engine</h2>
+          <h2 class="text-3xl font-bold mb-5 text-primary">Performance in Every Drop</h2>
           <p class="text-white/70 mb-4">
-            At ENR-G, we don’t just make engine oil—we engineer liquid performance. Born from a passion for automotive excellence and a commitment to cutting-edge science, our mission is simple: to provide every vehicle with the absolute best lubrication available.
+            At ENR-G, we don’t just make engine oil—we engineer <span class="text-primary font-semibold">liquid performance</span>.  
+            Born from passion for automotive excellence and advanced science, our mission is clear: give every vehicle the best lubrication technology available.
           </p>
           <p class="text-white/70 mb-4">
-            <strong>Our Philosophy:</strong> Maximum Energy, Maximum Protection. The name ENR-G stands for the Energy and superior Reliability we deliver to your engine. We understand that your vehicle is more than just transportation; it’s an investment, a tool, and a source of pride.
+            <strong>Our Philosophy:</strong> Maximum Energy, Maximum Protection.  
+            The name ENR-G represents the Energy and Reliability we bring to every engine.  
+            Every bottle we create is designed to outperform, ensuring smoother drives and longer engine life.
           </p>
           <p class="text-white/70">
-            That’s why every bottle of ENR-G engine oil is formulated to meet and exceed the toughest industry standards — giving your vehicle the strength and smoothness it deserves.
+            We formulate our oils to meet and exceed global standards, delivering the strength and smoothness your engine deserves.
           </p>
         </div>
-        <div class="rounded-xl overflow-hidden">
+
+        <div class="rounded-xl overflow-hidden shadow-lg shadow-primary/10 hover:scale-[1.02] transition-transform duration-500">
           <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop" alt="ENR-G Lubricants" class="w-full h-full object-cover"/>
         </div>
       </div>
     </section>
 
     <!-- OUR STORY -->
-    <section class="bg-white/5 border-t border-white/10 py-16">
+    <section class="bg-accent/50 border-t border-white/10 py-20">
       <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-6 text-primary">Born to Ride with ENR-G Oils</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Born to Ride with ENR-G Oils</h2>
         <p class="max-w-3xl mx-auto text-white/70 mb-8">
-          With all disciplines under one roof, our workshop is set up to design, prototype, manufacture and build from concept to final product.
-          ENR-G Automotive Lubricants is a brand that specializes in high-performance automotive lubricants and greases, bringing the latest international oil standards and premium additives to the Indian market.
+          From concept to final product, ENR-G combines precision engineering, advanced additives, and premium base oils  
+          to deliver lubricants that push performance limits — protecting engines under extreme conditions.
         </p>
         <p class="max-w-3xl mx-auto text-white/70">
-          Become the reliable source for performance and protection in your region. Fuel your growth with a leading lubricant brand—ENR-G Automotive Lubricants.
+          We bring the latest international oil standards to the Indian market, empowering drivers and distributors alike  
+          with reliable, high-performance automotive solutions.
         </p>
       </div>
     </section>
 
     <!-- STATS SECTION -->
-    <section class="container mx-auto px-6 py-16">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div>
-          <h3 class="text-4xl font-black text-primary">2021</h3>
+    <section class="container mx-auto px-6 py-20">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="group hover:scale-105 transition-transform">
+          <h3 class="text-4xl font-black text-primary group-hover:drop-shadow-[0_0_10px_#00ff66] transition-all">2021</h3>
           <p class="text-white/60 mt-2">Founded</p>
         </div>
-        <div>
-          <h3 class="text-4xl font-black text-primary">84</h3>
+        <div class="group hover:scale-105 transition-transform">
+          <h3 class="text-4xl font-black text-primary group-hover:drop-shadow-[0_0_10px_#00ff66] transition-all">84</h3>
           <p class="text-white/60 mt-2">Products</p>
         </div>
-        <div>
-          <h3 class="text-4xl font-black text-primary">128</h3>
+        <div class="group hover:scale-105 transition-transform">
+          <h3 class="text-4xl font-black text-primary group-hover:drop-shadow-[0_0_10px_#00ff66] transition-all">128</h3>
           <p class="text-white/60 mt-2">Clients</p>
         </div>
-        <div>
-          <h3 class="text-4xl font-black text-primary">6</h3>
+        <div class="group hover:scale-105 transition-transform">
+          <h3 class="text-4xl font-black text-primary group-hover:drop-shadow-[0_0_10px_#00ff66] transition-all">6</h3>
           <p class="text-white/60 mt-2">Awards</p>
         </div>
       </div>
     </section>
 
     <!-- CTA SECTION -->
-    <section class="bg-primary text-background-dark py-16 text-center">
+    <section class="bg-gradient-to-r from-primary/80 to-primary text-black py-20 text-center">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-black mb-4">Let’s Build Your Engine Performance!</h2>
-        <p class="text-background-dark/80 mb-6">Drive with the confidence that comes from using ENR-G — the energy your engine deserves.</p>
-        <a href="contact.html" class="bg-background-dark text-primary font-bold px-6 py-3 rounded-lg hover:bg-black transition">Let’s Talk</a>
+        <h2 class="text-3xl md:text-4xl font-black mb-4">Let’s Build Your Engine Performance!</h2>
+        <p class="text-black/70 mb-6">Drive with confidence. Choose ENR-G — the energy your engine deserves.</p>
+        <a href="contact.html" class="bg-black text-primary font-bold px-8 py-3 rounded-lg hover:bg-black/80 transition shadow-lg shadow-black/30">Contact Us</a>
       </div>
     </section>
 
-    <!-- CONTACT INFO FOOTER -->
-    <footer class="bg-black/30 border-t border-white/10">
+    <!-- FOOTER -->
+    <footer class="bg-black/40 border-t border-white/10">
       <div class="container mx-auto px-6 py-10">
         <div class="flex flex-col md:flex-row justify-between gap-6 text-sm text-white/70">
           <div>
-            <p><strong>CONTACT INFO</strong></p>
-            <p>C/19, Kandivali Industrial Estate, Kandivali West, Mumbai- 400067</p>
+            <p class="font-semibold mb-2 text-white">CONTACT INFO</p>
+            <p>C/19, Kandivali Industrial Estate, Kandivali West, Mumbai – 400067</p>
             <p>📞 +91 85917-62870</p>
             <p>✉️ info.enrgofficial@gmail.com</p>
           </div>
 
           <div class="text-center md:text-right">
             <p>© 2025 ENR-G Automotive Lubricants</p>
-            <p>Powered by <span class="text-primary">InfinikMark</span></p>
+            <p>Powered by <span class="text-primary font-semibold">InfinikMark</span></p>
           </div>
         </div>
       </div>
